@@ -46,11 +46,7 @@ class Student
     student.save
   end
 
-  def self.new_from_db
-    sql = <<-SQL
-    SELECT *
-    FROM students
-    SQL
+  def self.new_from_db(sql)
     Student.new(sql[1], sql[2], sql[0])
   end
 
