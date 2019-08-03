@@ -47,18 +47,18 @@ class Student
     student.save
   end
 
-  def self.new_from_db(sql)
-    Student.new(sql[1], sql[2], sql[0])
+  def self.new_from_db(array)
+    Student.new(array[1], array[2], array[0])
   end
 
   def self.find_by_name(name)
     sql = <<-SQL
-    SELECT name
+    SELECT *
     FROM students
     WHERE name = ?
     SQL
 
-    DB[:conn].execute(sql, name)
+    array = DB[:conn].execute(sql, name)
   end
 
   def update
