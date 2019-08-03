@@ -37,6 +37,7 @@ class Student
         VALUES (self.id, self.name, self.grade)
       SQL
       DB[:conn].execute(sql)
+    end
   end
 
   def self.create
