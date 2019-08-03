@@ -48,7 +48,10 @@ class Student
 
   def self.new_from_db
     sql = <<-SQL
+    SELECT *
+    FROM students
     SQL
+    Student.new(sql[1], sql[2], sql[0])
   end
 
   def self.find_by_name
