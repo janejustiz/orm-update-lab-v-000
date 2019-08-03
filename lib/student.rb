@@ -36,7 +36,7 @@ class Student
         INSERT INTO cats (id, name, grade)
         VALUES (self.id, self.name, self.grade)
       SQL
-
+      DB[:conn].execute(sql)
   end
 
   def self.create
