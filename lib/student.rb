@@ -29,8 +29,14 @@ class Student
   end
 
   def save
-    sql = <<-SQL
-    SQL
+    if self.id
+      self.update
+    else
+      sql = <<-SQL
+        INSERT INTO cats (id, name, grade)
+        VALUES (self.id, self.name, self.grade)
+      SQL
+
   end
 
   def self.create
