@@ -59,7 +59,7 @@ class Student
     SQL
 
     array = DB[:conn].execute(sql, name)
-    Student.new_from_db(array)
+    Student.new_from_db(sql, array)
   end
 
   def update
